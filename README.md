@@ -1,6 +1,6 @@
 # A Survival Guide to Simulations
 
-Wanna start? Copy these files first to your local machine. ;)
+Wanna start? Copy these files first to your local machine.
 
 <code>git clone https://gitlab.com/denysbiriukov/survival_guide_simulations_c9555.git</code>
 
@@ -24,4 +24,4 @@ Initiate the conda and jupyter environment with all necessary packages:
 
 <code>bash ../conda/conda-activate.sh</code>
 
-Ready to go!
+Once the jupyter environment is enabled, open the jupyter notebook in your browser via the link popping up on the screen, and you ready to go!
