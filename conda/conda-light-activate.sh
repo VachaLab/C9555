@@ -6,9 +6,7 @@ conda create --name c9555 -y
 conda activate c9555
 
 # install necessary components to the environment
-conda install -c conda-forge nglview python=3.7 mdanalysis jupyterlab=3.6.3 jupyterlab_widgets ipywidgets=8.1.0 nodejs scipy -y
-# conda install -c conda-forge nglview gromacswrapper python=3.7 mdanalysis jupyterlab=3.6.3 jupyterlab_widgets ipywidgets=8.1.0 nodejs scipy -y
-# conda install -c omnia openmm
+conda install -c conda-forge python=3.7 mdanalysis matplotlib pandas jupyterlab=3.6.3 jupyterlab_widgets ipywidgets=8.1.0 nodejs scipy -y
 
 # activate jupyter
 jupyter lab build
