@@ -8,7 +8,11 @@ Wanna start? Copy these files first to your local machine.
 
 Before any practical lesson, be sure that the working environment is ready and functional.
 
-Enter the folder of the corresponding practical, for instance:
+First, enter the folder of the course:
+
+<code>cd survival_guide_simulations_c9555/</code>
+
+Then, enter the folder of the corresponding practical, for instance:
 
 <code>cd week1/</code>
 
