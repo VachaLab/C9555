@@ -4,7 +4,7 @@
 source /software/ncbr/softrepo/devel/anaconda3/2022.05/x86_64/para/bin/activate
 conda create --prefix /scratch/$USER/conda_envs/c9555
 # conda create --name c9555 -y
-conda activate /scratch/$USER/conda_envs/c9555
+source activate /scratch/$USER/conda_envs/c9555
 # conda activate c9555
 
 # install necessary components to the environment
