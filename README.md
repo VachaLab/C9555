@@ -22,6 +22,6 @@ Adjust the infinity environment for the needs of the course:
 
 Initiate the conda and jupyter environment with all necessary packages:
 
-<code>bash ../conda/conda-activate.sh</code>
+<code>bash ../conda/conda-light-activate.sh</code>
 
 Once the jupyter environment is enabled, open the jupyter notebook in your browser via the link popping up on the screen, and you are ready to go!
