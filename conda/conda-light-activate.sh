@@ -2,7 +2,7 @@
 
 # create the conda course environment
 source /software/ncbr/softrepo/devel/anaconda3/2022.05/x86_64/para/bin/activate
-conda create --prefix /scratch/$USER/conda_envs/c9555
+conda create --prefix /scratch/$USER/conda_envs/c9555 -y
 # conda create --name c9555 -y
 source activate /scratch/$USER/conda_envs/c9555
 # conda activate c9555
