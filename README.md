@@ -4,13 +4,6 @@ Wanna start? It is the first week? Copy these files first to your local machine.
 
 <code>git clone https://gitlab.com/denysbiriukov/survival_guide_simulations_c9555.git</code>
 
-If you have already done it, then:
-
-<code>git remote add upstream https://gitlab.com/denysbiriukov/survival_guide_simulations_c9555.git</code>
-<code>git fetch upstream</code>
-
-It is enough to execute the first command once.
-
 ### Instruction for MUNI students
 
 Before any practical lesson, be sure that the working environment is ready and functional.

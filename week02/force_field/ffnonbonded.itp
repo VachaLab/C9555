@@ -1,0 +1,16 @@
+[ atomtypes ]
+; full atom descriptions are available in ffoplsaa.atp
+; name  bond_type    mass    charge   ptype          sigma      epsilon
+
+; four-site tip4p/2005 water model
+
+ MW_tip4p   MW    0		 0.00000    -1.1128     D    0.00000e+00  0.00000000
+ OW_tip4p   OW    8		15.99940     0.0000     A    3.15890e-01  0.77490765
+ HW_tip4p   HW    1		 1.00794     0.5564     A    0.00000e+00  0.00000000
+
+; three-site OPLS/2016 methanol model
+
+ opls_154   OH	  8     15.99940    -0.6544     A    3.16590e-01  8.12941e-01
+ opls_155   HO	  1      1.00794     0.4998     A    0.00000e+00  0.00000e+00
+; opls_157   CT	  6     12.01100     0.1546     A    3.64990e-01  9.18327e-01
+ opls_157   CT    6     15.03482     0.1546     A    3.64990e-01  9.18327e-01
