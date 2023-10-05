@@ -28,6 +28,6 @@ Initiate the conda and jupyter environment with all necessary packages:
 
 <code>bash ../conda/conda-adjust.sh</code>
 
-<code>bash ../jupyter-start.sh</code>
+<code>bash ../conda/jupyter-start.sh</code>
 
 Once the jupyter environment is enabled, open the jupyter notebook in your browser via the link popping up on the screen, and you are ready to go!
