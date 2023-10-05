@@ -13,5 +13,5 @@ conda install -c conda-forge nglview python=3.7 matplotlib pandas mdanalysis jup
 # conda install -c omnia openmm
 
 # activate jupyter
-jupyter lab build
-jupyter lab --no-browser
+# jupyter lab build
+# jupyter lab --no-browser
