@@ -12,6 +12,3 @@ conda config --add pkgs_dirs /scratch/$USER/conda_pkgs
 conda install -c conda-forge nglview python=3.7 matplotlib pandas mdanalysis jupyterlab=3.6.3 jupyterlab_widgets ipywidgets=8.1.0 nodejs ipython scipy -y
 # conda install -c omnia openmm
 
-# activate jupyter
-# jupyter lab build
-# jupyter lab --no-browser

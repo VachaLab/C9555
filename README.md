@@ -20,8 +20,14 @@ Adjust the infinity environment for the needs of the course:
 
 <code>bash ../infinity/infinity-modules.sh</code>
 
+<code>bash ../infinity/infinity-temp.sh</code>
+
 Initiate the conda and jupyter environment with all necessary packages:
 
 <code>bash ../conda/conda-light-activate.sh</code>
+
+<code>bash ../conda/conda-adjust.sh</code>
+
+<code>bash ../jupyter-start.sh</code>
 
 Once the jupyter environment is enabled, open the jupyter notebook in your browser via the link popping up on the screen, and you are ready to go!

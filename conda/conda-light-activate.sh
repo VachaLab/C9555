@@ -11,6 +11,3 @@ source activate /scratch/$USER/conda_envs/c9555
 conda config --add pkgs_dirs /scratch/$USER/conda_pkgs
 conda install -c conda-forge python=3.7 jupyterlab=3.6.3 jupyterlab_widgets ipywidgets=8.1.0 -y
 
-# activate jupyter
-# jupyter lab build
-# jupyter lab --no-browser
