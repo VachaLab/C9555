@@ -18,8 +18,6 @@ Then, enter the folder of the corresponding practical, for instance:
 
 Adjust the infinity environment for the needs of the course:
 
-<code>bash ../infinity/infinity-modules.sh</code>
-
 <code>bash ../infinity/infinity-temp.sh</code>
 
 Initiate the conda and jupyter environment with all necessary packages:
