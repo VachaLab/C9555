@@ -22,9 +22,7 @@ Adjust the infinity environment for the needs of the course:
 
 Initiate the conda and jupyter environment with all necessary packages:
 
-<code>bash ../conda/conda-light-activate.sh</code>
-
-<code>bash ../conda/conda-adjust.sh</code>
+<code>bash ../conda/conda-activate.sh</code>
 
 <code>bash ../conda/jupyter-start.sh</code>
 
