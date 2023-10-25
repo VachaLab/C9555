@@ -4,6 +4,10 @@ Wanna start? It is the first week? Copy these files first to your local machine.
 
 <code>git clone https://gitlab.com/denysbiriukov/survival_guide_simulations_c9555.git</code>
 
+To have the download more compact, alternative is the following:
+
+<code>git clone --depth 1 https://gitlab.com/denysbiriukov/survival_guide_simulations_c9555.git</code>
+
 ### Instruction for MUNI students
 
 Before any practical lesson, be sure that the working environment is ready and functional.
