@@ -1,0 +1,52 @@
+; Survival guide to simulations | week5
+
+integrator       = md    ; MD integrator
+tinit            = 0     ;
+dt               = 0.001 ; 1 fs timestep
+nsteps           = 250000 ; 25 ps
+pbc              = xyz   ; Periodic boundary conditions in xyz
+
+; OUTPUT CONTROL OPTIONS
+nstxtcout        = 1000    ;
+; nstxout          = 100    ;
+nstvout          = 0    ;
+nstfout          = 0    ;
+nstenergy        = 1000    ; .edr-file output
+ns_type          = grid  ; Fastest option
+nstlist          = 10    ; Update neighbor list between cut-offs; increasing this value doesn't yield speedup (rather a bit slower)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+comm-mode        = linear  ;
+nstcomm          = 100      ; COM motion removal
+comm-grps        = system   ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; OPTIONS FOR ELECTROSTATICS AND VDW
+cutoff-scheme    = verlet     ; group is alternative
+coulombtype      = PME        ; Particle mesh Ewald, do not change
+rcoulomb         = 1.2        ; Real-space cut-off
+vdwtype          = cut-off    ;
+vdw-modifier     = potential-shift-verlet   ; =shifted-vdw with Verlet_cutoff_scheme, =none with grid_cutoff_scheme
+rvdw             = 1.2        ; VdW cut-off, orig paper rvdw=1.4, but this value is still fine (tested for both rigbonds an VSites, almost identical)
+DispCorr         = EnerPres   ; Dispersion corrections to both the potential and pressure
+table-extension  = 1.2
+fourierspacing   = 0.12       ; PME grid
+
+; OPTIONS FOR WEAK COUPLING ALGORITHMS 
+tcoupl           = berendsen  ; Thermostat, v-rescale or nose-hoover is also fine
+tc-grps          = POPC Water_and_ions     ; Couple lipids and Water_and_ions seperatly
+tau-t            = 0.1 0.1        ; Time constant for temperature coupling
+ref-t            = 310 310       ; Desired temperature (K)
+
+Pcoupl           = berendsen  ; Barostat
+Pcoupltype       = semiisotropic          ; Pressure in xy and z couple separately
+ref-p            = 1.013 1.013              ; Desired pressure (bar)
+tau-p            = 2.0 ; Time constant for pressure coupling
+compressibility  = 4.5e-5 4.5e-5             ; Same as for water
+refcoord_scaling = com
+
+; CONSTRAINTS
+; constraints    = hbonds
+constraint-algorithm     = Lincs
+lincs-order      = 5    ; Increasing these does not make much change to the precision of virtual sites (J. Melcr)
+lincs-iter       = 2    ; 5,2 conserves energy in NVE well enough (J. Melcr)

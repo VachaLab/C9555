@@ -1,0 +1,11 @@
+; Include water topology
+#include "met.itp"
+
+[ system ]
+; name
+methane
+
+[ molecules ]
+; name  number
+MET  1
+
