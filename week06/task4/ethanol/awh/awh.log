@@ -1,0 +1,2428 @@
+                  :-) GROMACS - mdrun_mpi_avx2_256, 2021.4 (-:
+
+                            GROMACS is written by:
+     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
+         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
+       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
+     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
+    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
+       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
+      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
+    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
+      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
+       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
+        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
+        Szilard Pall               Sander Pronk              Roland Schulz       
+       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
+       Peter Tieleman              Jon Vincent              Teemu Virolainen     
+     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      mdrun_mpi_avx2_256, version 2021.4
+Executable:   /software/ncbr/softrepo/common/gromacs/2021.4-plumed/m64-deb9/para/bin//mdrun_mpi_avx2_256
+Data prefix:  /software/ncbr/softrepo/common/gromacs/2021.4-plumed/m64-deb9/para
+Working dir:  /home/mr_dizzy/teaching/survival_guide_to_MD/week06/tutor/awh-free-energy-of-solvation-main/working/awh
+Process ID:   77057
+Command line:
+  mdrun_mpi_avx2_256 -nice 0 -deffnm awh -v
+
+GROMACS version:    2021.4
+Precision:          mixed
+Memory model:       64 bit
+MPI library:        MPI
+OpenMP support:     enabled (GMX_OPENMP_MAX_THREADS = 64)
+GPU support:        CUDA
+SIMD instructions:  AVX2_256
+FFT library:        Intel MKL
+RDTSCP usage:       enabled
+TNG support:        enabled
+Hwloc support:      disabled
+Tracing support:    disabled
+C compiler:         /software/ncbr/softrepo/devel/openmpi/3.1.5-gcc/x86_64/para/bin/mpicc GNU 8.4.0
+C compiler flags:   -mavx2 -mfma -Wno-missing-field-initializers -fexcess-precision=fast -funroll-all-loops -O2 -g -DNDEBUG
+C++ compiler:       /software/ncbr/softrepo/devel/openmpi/3.1.5-gcc/x86_64/para/bin/mpic++ GNU 8.4.0
+C++ compiler flags: -mavx2 -mfma -Wno-missing-field-initializers -fexcess-precision=fast -funroll-all-loops -fopenmp -O2 -g -DNDEBUG
+CUDA compiler:      /software/ncbr/softrepo/gpu/cudacdk/11.1.1/x86_64/single/bin/nvcc nvcc: NVIDIA (R) Cuda compiler driver;Copyright (c) 2005-2020 NVIDIA Corporation;Built on Mon_Oct_12_20:09:46_PDT_2020;Cuda compilation tools, release 11.1, V11.1.105;Build cuda_11.1.TC455_06.29190527_0
+CUDA compiler flags:-std=c++17;-gencode;arch=compute_35,code=sm_35;-gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_52,code=sm_52;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-Wno-deprecated-gpu-targets;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_35,code=compute_35;-gencode;arch=compute_53,code=compute_53;-gencode;arch=compute_80,code=compute_80;-use_fast_math;-D_FORCE_INLINES;-mavx2 -mfma -Wno-missing-field-initializers -fexcess-precision=fast -funroll-all-loops -fopenmp -O2 -g -DNDEBUG
+CUDA driver:        12.0
+CUDA runtime:       11.10
+
+
+Running on 1 node with total 8 cores, 16 logical cores, 1 compatible GPU
+Hardware detected on host okr.ceitec.muni.cz (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz
+    Family: 6   Model: 165   Stepping: 5
+    Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+  Hardware topology: Basic
+    Sockets, cores, and logical processors:
+      Socket  0: [   0   8] [   1   9] [   2  10] [   3  11] [   4  12] [   5  13] [   6  14] [   7  15]
+  GPU info:
+    Number of GPUs detected: 1
+    #0: NVIDIA NVIDIA GeForce RTX 2060 SUPER, compute cap.: 7.5, ECC:  no, stat: compatible
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE CITE THE DOI FOR THIS VERSION OF GROMACS ++++
+https://doi.org/10.5281/zenodo.5636567
+-------- -------- --- Thank You --- -------- --------
+
+
+The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 8
+
+Input Parameters:
+   integrator                     = sd
+   tinit                          = 0
+   dt                             = 0.002
+   nsteps                         = 700000
+   init-step                      = 0
+   simulation-part                = 1
+   mts                            = false
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = -141033993
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 5000
+   nstcalcenergy                  = 50
+   nstenergy                      = 1000
+   nstxout-compressed             = 0
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 10
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   rlist                          = 1.1
+   coulombtype                    = PME
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.1
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-shift
+   rvdw-switch                    = 0
+   rvdw                           = 1.1
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.13
+   fourier-nx                     = 24
+   fourier-ny                     = 24
+   fourier-nz                     = 24
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 0
+   epsilon-surface                = 0
+   tcoupl                         = No
+   nsttcouple                     = -1
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = C-rescale
+   pcoupltype                     = Isotropic
+   nstpcouple                     = 10
+   tau-p                          = 5
+   compressibility (3x3):
+      compressibility[    0]={ 4.50000e-05,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  4.50000e-05,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  4.50000e-05}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = false
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = false
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   awh                            = true
+   awh-potential                  = umbrella
+   awh-seed                       = 1744661326
+   awh-nstout                     = 50000
+   awh-nstsample                  = 50
+   awh-nsamples-update            = 10
+   awh-share-bias-multisim        = false
+   awh-nbias                      = 1
+   awh1-error-init                = 10
+   awh1-growth                    = exp-linear
+   awh1-target                    = constant
+   awh1-target-beta-scalng        = 0
+   awh1-target-cutoff             = 0
+   awh1-user-data                 = false
+   awh1-share-group               = 0
+   awh1-equilibrate-histogram     = false
+   awh1-ndim                      = 1
+   awh1-dim1:
+    coord-provider                 = fep-lambda
+    coord-index                    = 1
+    start                          = 0
+    end                            = 12
+    period                         = 0
+    force-constant                 = 0
+    diffusion                      = 0.001
+    cover-diameter                 = 0
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = yes
+   init-lambda                    = -1
+   init-lambda-state              = 12
+   delta-lambda                   = 0
+   nstdhdl                        = 50
+   n-lambdas                      = 13
+   separate-dvdl:
+       fep-lambdas =   TRUE
+      mass-lambdas =   FALSE
+      coul-lambdas =   FALSE
+       vdw-lambdas =   FALSE
+    bonded-lambdas =   FALSE
+ restraint-lambdas =   FALSE
+temperature-lambdas =   FALSE
+all-lambdas:
+       fep-lambdas =            0         0.1         0.2         0.3         0.4         0.5         0.6         0.7         0.8        0.85         0.9        0.95           1
+      mass-lambdas =            0         0.1         0.2         0.3         0.4         0.5         0.6         0.7         0.8        0.85         0.9        0.95           1
+      coul-lambdas =            0         0.1         0.2         0.3         0.4         0.5         0.6         0.7         0.8        0.85         0.9        0.95           1
+       vdw-lambdas =            0         0.1         0.2         0.3         0.4         0.5         0.6         0.7         0.8        0.85         0.9        0.95           1
+    bonded-lambdas =            0         0.1         0.2         0.3         0.4         0.5         0.6         0.7         0.8        0.85         0.9        0.95           1
+ restraint-lambdas =            0         0.1         0.2         0.3         0.4         0.5         0.6         0.7         0.8        0.85         0.9        0.95           1
+temperature-lambdas =            0         0.1         0.2         0.3         0.4         0.5         0.6         0.7         0.8        0.85         0.9        0.95           1
+   calc-lambda-neighbors          = -1
+   dhdl-print-energy              = no
+   sc-alpha                       = 1
+   sc-power                       = 1
+   sc-r-power                     = 6
+   sc-sigma                       = 0.3
+   sc-sigma-min                   = 0.3
+   sc-coul                        = true
+   dh-hist-size                   = 0
+   dh-hist-spacing                = 0.1
+   separate-dhdl-file             = yes
+   dhdl-derivatives               = yes
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+     density-guided-simulation:
+       active                     = false
+       group                      = protein
+       similarity-measure         = inner-product
+       atom-spreading-weight      = unity
+       force-constant             = 1e+09
+       gaussian-transform-spreading-width = 0.2
+       gaussian-transform-spreading-range-in-multiples-of-width = 4
+       reference-density-filename = reference.mrc
+       nst                        = 1
+       normalize-densities        = true
+       adaptive-force-scaling     = false
+       adaptive-force-scaling-time-constant = 4
+       shift-vector               = 
+       transformation-matrix      = 
+grpopts:
+   nrdf:        2952
+   ref-t:         300
+   tau-t:           2
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+Changing nstlist from 10 to 100, rlist from 1.1 to 1.261
+
+1 GPU selected for this run.
+Mapping of GPU IDs to the 2 GPU tasks in the 1 rank on this node:
+  PP:0,PME:0
+PP tasks will do (non-perturbed) short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+PME tasks will do all aspects on the GPU
+Using 1 MPI process
+Using 8 OpenMP threads 
+
+
+NOTE: The number of threads is not equal to the number of (logical) cores
+      and the -pin option is set to auto: will not pin threads to cores.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+System total charge, top. A: 0.000 top. B: -0.000
+Will do PME sum in reciprocal space for electrostatic interactions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee and L. G. Pedersen 
+A smooth particle mesh Ewald method
+J. Chem. Phys. 103 (1995) pp. 8577-8592
+-------- -------- --- Thank You --- -------- --------
+
+Using a Gaussian width (1/beta) of 0.352179 nm for Ewald
+Potential shift: LJ r^-12: -3.186e-01 r^-6: -5.645e-01, Ewald -9.091e-06
+Initialized non-bonded Ewald tables, spacing: 9.79e-04 size: 2312
+
+Generated table with 1130 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1130 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1130 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+
+
+Using GPU 8x8 nonbonded short-range kernels
+
+Using a dual 8x8 pair-list setup updated with dynamic, rolling pruning:
+  outer list: updated every 100 steps, buffer 0.161 nm, rlist 1.261 nm
+  inner list: updated every  10 steps, buffer 0.001 nm, rlist 1.101 nm
+At tolerance 0.005 kJ/mol/ps per atom, equivalent classical 1x1 list would be:
+  outer list: updated every 100 steps, buffer 0.315 nm, rlist 1.415 nm
+  inner list: updated every  10 steps, buffer 0.043 nm, rlist 1.143 nm
+
+Using geometric Lennard-Jones combination rule
+There are 9 atoms and 9 charges for free energy perturbation
+Removing pbc first time
+
+Initializing LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and H. Bekker and H. J. C. Berendsen and J. G. E. M. Fraaije
+LINCS: A Linear Constraint Solver for molecular simulations
+J. Comp. Chem. 18 (1997) pp. 1463-1472
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 6
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Miyamoto and P. A. Kollman
+SETTLE: An Analytical Version of the SHAKE and RATTLE Algorithms for Rigid
+Water Models
+J. Comp. Chem. 13 (1992) pp. 952-962
+-------- -------- --- Thank You --- -------- --------
+
+Initial vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. Bernetti, G. Bussi
+Pressure control using stochastic cell rescaling
+J. Chem. Phys. 153 (2020) pp. 114107
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+N. Goga and A. J. Rzepiela and A. H. de Vries and S. J. Marrink and H. J. C.
+Berendsen
+Efficient Algorithms for Langevin and DPD Dynamics
+J. Chem. Theory Comput. 8 (2012) pp. 3637--3649
+-------- -------- --- Thank You --- -------- --------
+
+There are: 1476 Atoms
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+V. Lindahl, J. Lidmar, B. Hess
+Accelerated weight histogram method for exploring free energy landscapes
+J. Chem. Phys. 141 (2014) pp. 044110
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. Lundborg, J. Lidmar, B. Hess
+The accelerated weight histogram method for alchemical free energy calculations
+J. Chem. Phys. 154 (2021) pp. 204103
+-------- -------- --- Thank You --- -------- --------
+
+
+awh1: initial force correlation block length = 0.1 ps
+awh1: force correlation number of blocks = 64
+Constraining the starting coordinates (step 0)
+
+Constraining the coordinates at t0-dt (step 0)
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+RMS relative constraint deviation after constraining: 1.18e-06
+Initial temperature: 303.108 K
+
+Started mdrun on rank 0 Wed Nov  1 13:23:27 2023
+
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.31092e+00    1.04142e+01    7.57727e+00    1.28744e-01   -4.48962e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.29088e+03   -2.69329e+04    7.85449e+01   -2.25870e+04    3.73067e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88563e+04    3.03995e+02   -5.34637e+02   -1.58993e+03    1.09932e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+           5000       10.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19354e+00    1.02467e+01    2.78261e+00    3.57222e-01   -4.97234e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.49426e+03   -2.70811e+04    6.96358e+01   -2.25523e+04    3.51672e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90356e+04    2.86561e+02    1.68063e+02   -1.06231e+03    1.23287e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+          10000       20.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.84833e+00    1.20494e+01    4.07610e+00    1.62406e+00   -4.84183e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.40048e+03   -2.68518e+04    9.09812e+01   -2.23871e+04    3.77561e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.86115e+04    3.07657e+02    4.37461e+02   -3.20154e+01    2.09791e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+          15000       30.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.70221e+00    6.24034e+00    3.90432e+00    1.25330e+00   -4.66867e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.28714e+03   -2.70345e+04    7.93129e+01   -2.27016e+04    3.51578e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91858e+04    2.86484e+02   -7.70379e+02    8.51350e+00    1.82566e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+step 15900: timed with pme grid 24 24 24, coulomb cutoff 1.100: 88.6 M-cycles
+step 15900: the box size limits the PME load balancing to a coulomb cut-off of 1.168
+step 16100: timed with pme grid 20 20 20, coulomb cutoff 1.168: 104.3 M-cycles
+step 16300: timed with pme grid 24 24 24, coulomb cutoff 1.100: 94.4 M-cycles
+              optimal pme grid 24 24 24, coulomb cutoff 1.100
+           Step           Time
+          20000       40.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.89985e+00    7.96411e+00    3.01691e+00    1.03206e+00   -4.67291e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.59377e+03   -2.72933e+04    9.40552e+01   -2.26363e+04    3.65217e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89841e+04    2.97599e+02    6.08692e+02   -3.37520e+01    2.09734e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+          25000       50.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.18630e+00    7.95941e+00    6.79836e-01    2.01418e+00   -4.81244e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.51354e+03   -2.73224e+04    7.71192e+01   -2.27671e+04    3.63422e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91328e+04    2.96136e+02    3.21443e+01    3.26010e+01    1.23742e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+          30000       60.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.26268e-01    1.07513e+01    2.88270e+00    2.32935e-01   -4.58132e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.53686e+03   -2.74191e+04    7.70168e+01   -2.28369e+04    3.73186e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91050e+04    3.04092e+02   -2.51069e+02   -2.85101e+01    1.84758e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+          35000       70.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.98346e+00    8.51406e+00    3.99708e-01    1.61757e-01   -4.53158e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.49682e+03   -2.74284e+04    8.33334e+01   -2.28815e+04    3.74780e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91337e+04    3.05391e+02   -5.97336e+01    1.22658e+01    1.69218e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+          40000       80.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.98117e+00    8.69602e+00    3.86943e-01    5.18631e-01   -4.67532e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.49068e+03   -2.71593e+04    8.30172e+01   -2.26197e+04    3.58504e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90347e+04    2.92128e+02    4.94898e+02   -9.38990e+01    3.43327e-06
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+           Step           Time
+          45000       90.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.73145e+00    1.98407e+01   -1.03213e+00   -3.16056e-01   -4.73736e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.40687e+03   -2.71255e+04    7.09911e+01   -2.26748e+04    3.68728e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89875e+04    3.00459e+02   -9.79879e+01    8.02949e+01    9.58011e-07
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+          50000      100.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.75255e+00    7.75667e+00    1.87082e+00    9.21253e-02   -4.54685e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.31273e+03   -2.72149e+04    7.82145e+01   -2.28580e+04    3.78961e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90683e+04    3.08798e+02   -8.17559e+02    3.14544e+01    3.93120e-07
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+          55000      110.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.48444e+00    1.11876e+01    1.61764e+00    1.12197e+00   -4.74612e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.50007e+03   -2.70644e+04    7.47662e+01   -2.25186e+04    3.65486e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88637e+04    2.97818e+02    7.01689e+02    1.09160e+01    5.34623e-06
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+          60000      120.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.76700e-01    9.51760e+00    1.57377e+00    1.46270e-01   -5.13715e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.34224e+03   -2.69236e+04    9.06121e+01   -2.25304e+04    3.69903e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88313e+04    3.01417e+02   -3.15121e+02    1.23073e+02    3.27491e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+          65000      130.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.37889e+00    1.72455e+01    1.85370e+00    9.41055e-01   -4.73042e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.48918e+03   -2.71916e+04    7.17294e+01   -2.26566e+04    3.60071e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90559e+04    2.93405e+02    3.97427e+02    1.24929e+01    1.12409e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+          70000      140.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.98808e-01    1.70266e+01   -4.33295e-02    5.30601e-01   -4.89355e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.67295e+03   -2.76576e+04    9.28575e+01   -2.29230e+04    3.58862e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.93344e+04    2.92420e+02    9.75545e+02   -6.79868e+01    1.24292e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+          75000      150.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.39397e+00    1.13931e+01    7.23603e+00    1.52514e+00   -4.70067e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.61118e+03   -2.75266e+04    7.46250e+01   -2.28662e+04    3.64029e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92259e+04    2.96630e+02    4.02349e+02   -8.36261e+01    2.05658e-06
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+
+awh1: covering at t = 152 ps. Decreased the update size.
+           Step           Time
+          80000      160.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.59502e+00    1.65306e+01    1.77276e+00    1.53452e+00   -4.75336e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.25052e+03   -2.69398e+04    7.24059e+01   -2.26429e+04    3.72689e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89160e+04    3.03687e+02   -7.16179e+02   -8.38473e+01    2.09282e-06
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+           Step           Time
+          85000      170.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.72385e+00    1.57253e+01    4.37300e+00   -2.16231e-01   -4.59258e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.31061e+03   -2.68622e+04    9.18326e+01   -2.24800e+04    3.55747e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89226e+04    2.89882e+02   -3.24731e+02   -2.69029e+00    1.67035e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+          90000      180.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.31795e+00    1.02371e+01    1.33622e+00    1.50539e+00   -4.84778e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.44775e+03   -2.72325e+04    7.20261e+01   -2.27408e+04    3.82631e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89145e+04    3.11788e+02   -1.26859e+02   -3.12944e+01    1.11643e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+          95000      190.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.53853e+00    1.38284e+01    1.27245e+00    1.64844e+00   -4.64726e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.69591e+03   -2.74541e+04    7.88304e+01   -2.27075e+04    3.62676e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90808e+04    2.95528e+02    9.59879e+02   -1.17426e+02    6.13667e-07
+
+Current vector of lambda components:[     0.0000     0.0000     0.0000     0.0000     0.0000     0.0000     0.0000 ]
+
+           Step           Time
+         100000      200.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.42051e+00    1.43677e+01    4.15101e+00    1.08884e-01   -5.23078e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.32549e+03   -2.70961e+04    9.25933e+01   -2.27093e+04    3.59444e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91148e+04    2.92894e+02   -3.95271e+02   -3.45335e+01    5.46827e-07
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         105000      210.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.61482e-01    1.52393e+01    5.03776e+00    5.67996e-01   -4.96312e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.47636e+03   -2.74194e+04    8.66109e+01   -2.28844e+04    3.77890e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91055e+04    3.07925e+02    2.05865e+02   -1.03197e+02    2.95850e-06
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+           Step           Time
+         110000      220.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.67521e+00    1.46738e+01    4.75544e+00    2.66924e+00   -4.64825e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.56516e+03   -2.73443e+04    8.85213e+01   -2.27134e+04    3.73704e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89763e+04    3.04514e+02    3.08485e+02   -3.94497e+01    4.33246e-07
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         115000      230.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.62680e-01    1.75237e+01    4.55558e+00    7.26577e-02   -5.13731e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.23443e+03   -2.71426e+04    7.08889e+01   -2.28663e+04    3.56483e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.93015e+04    2.90481e+02   -9.00286e+02    1.35974e+02    8.35529e-07
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         120000      240.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.95886e-02    2.36381e+00    1.78250e+00    7.00707e-01   -4.68842e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.23460e+03   -2.69274e+04    8.46146e+01   -2.26502e+04    3.68433e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89659e+04    3.00219e+02   -4.82325e+02    2.67688e+01    4.23885e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         125000      250.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.32600e+00    1.53574e+01    8.00009e+00    1.67677e+00   -4.76259e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.27060e+03   -2.69841e+04    7.96347e+01   -2.26541e+04    3.79014e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88640e+04    3.08841e+02   -6.53555e+02   -8.15091e+01    1.41386e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         130000      260.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.27748e+00    1.17919e+01    4.92900e+00    2.00298e-01   -4.74359e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.55170e+03   -2.72541e+04    8.01034e+01   -2.26475e+04    3.64108e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90064e+04    2.96695e+02    7.33079e+02    1.43154e+01    4.33928e-07
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         135000      270.00000
+
+
+awh1: covering at t = 270 ps. Decreased the update size.
+
+awh1: out of the initial stage at t = 270.
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.90786e+00    7.52940e+00   -1.37922e+00    1.91068e+00   -5.19797e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.50123e+03   -2.71568e+04    9.20050e+01   -2.26046e+04    3.71421e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88904e+04    3.02654e+02    8.06767e+01   -1.18605e+02    2.76996e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         140000      280.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.18824e+00    1.44349e+01    5.08568e-01    8.99676e-01   -5.27149e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.63464e+03   -2.74084e+04    8.74596e+01   -2.27190e+04    3.60870e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91103e+04    2.94056e+02    6.59341e+02   -2.09529e+01    6.77529e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         145000      290.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.72504e+00    9.58591e+00    4.37785e+00    1.26690e-01   -4.42212e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.08155e+03   -2.67039e+04    8.37518e+01   -2.25670e+04    3.51085e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90562e+04    2.86083e+02   -1.04892e+03    4.97302e+01    7.36063e-07
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+         150000      300.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.15953e-01    5.82666e+00    2.85446e-01    4.96261e-01   -4.61674e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.24914e+03   -2.70033e+04    7.74542e+01   -2.27154e+04    3.48223e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92331e+04    2.83751e+02   -8.60069e+02    4.15485e+01    1.23838e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         155000      310.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.92503e+00    1.00219e+01    3.08182e-01    5.52679e-01   -4.66928e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.34417e+03   -2.71485e+04    8.88199e+01   -2.27444e+04    3.67045e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90740e+04    2.99088e+02   -4.21003e+02    6.13495e+01    4.09873e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         160000      320.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.69729e+00    9.96594e+00    2.54791e+00    1.00959e+00   -4.72307e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.17695e+03   -2.67583e+04    8.97916e+01   -2.25205e+04    3.54018e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89804e+04    2.88472e+02   -5.83731e+02    6.72665e+01    1.21813e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         165000      330.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.92400e+00    1.31605e+01    6.31145e+00    1.55328e+00   -4.74332e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.07403e+03   -2.67802e+04    7.87573e+01   -2.26498e+04    3.68319e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89667e+04    3.00126e+02   -1.21051e+03    2.02494e+01    1.87099e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         170000      340.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.21963e+00    1.32864e+01    2.70891e+00    4.49807e-01   -4.61348e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.09455e+03   -2.68201e+04    7.57899e+01   -2.26782e+04    3.68059e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89976e+04    2.99914e+02   -9.31507e+02    9.10732e+00    2.16623e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         175000      350.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.41027e+00    6.59611e+00    2.07384e+00    1.46886e+00   -4.82211e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.58587e+03   -2.76984e+04    1.01089e+02   -2.30451e+04    3.75493e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92901e+04    3.05972e+02    1.75661e+02   -1.96000e+03    1.71685e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         180000      360.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.95839e+00    1.58365e+01    5.64991e-01   -2.05697e-01   -4.43933e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.21743e+03   -2.68898e+04    7.63312e+01   -2.26223e+04    3.62428e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89980e+04    2.95326e+02   -8.65548e+02    1.38465e+02    2.04488e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         185000      370.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10719e+00    2.01505e+01    5.27010e+00    5.28001e-01   -4.49943e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.20671e+03   -2.68560e+04    8.13829e+01   -2.25858e+04    3.69733e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88885e+04    3.01278e+02   -5.47072e+02    7.80581e+01    4.01030e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         190000      380.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.41365e+00    1.13211e+01    1.00692e+00    4.25577e-01   -4.62762e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.51748e+03   -2.72278e+04    8.05701e+01   -2.26569e+04    3.83062e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88263e+04    3.12140e+02    3.99843e+02   -3.20211e+01    2.94274e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         195000      390.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.68749e+00    1.62041e+01    3.00272e+00    1.87350e-01   -4.64571e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.75509e+03   -2.73585e+04    8.91362e+01   -2.25366e+04    3.62045e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89162e+04    2.95014e+02    1.56120e+03   -6.04728e+02    3.35476e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         200000      400.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.28966e-01    1.35536e+01    5.08491e+00    1.34474e-02   -4.68747e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.78290e+03   -2.76099e+04    9.38633e+01   -2.27610e+04    3.73231e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90287e+04    3.04128e+02    1.26487e+03    2.65181e+01    2.66293e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         205000      410.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.98583e+00    2.04124e+01    3.82309e+00    1.11765e-02   -4.90037e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.54215e+03   -2.74980e+04    7.92497e+01   -2.28994e+04    3.83685e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90626e+04    3.12647e+02    2.44125e+02    3.12765e+01    1.71754e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         210000      420.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.65165e+00    8.30625e+00    4.36672e+00    2.96301e-02   -4.67249e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.56401e+03   -2.74351e+04    8.93072e+01   -2.28131e+04    3.87944e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89337e+04    3.16118e+02    5.28902e+02   -6.10513e+02    3.50267e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         215000      430.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.68496e+00    7.26396e+00    3.00345e+00    7.94592e-01   -4.91512e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.43303e+03   -2.70969e+04    7.98115e+01   -2.26194e+04    3.66932e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89501e+04    2.98996e+02    1.90493e+02   -4.01951e+00    8.04847e-07
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+         220000      440.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.36093e+00    5.94344e+00    1.06847e+00    1.59591e+00   -5.08124e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.46900e+03   -2.74867e+04    7.89745e+01   -2.29795e+04    3.75279e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92267e+04    3.05797e+02   -5.13610e+01    5.22329e+01    1.41490e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         225000      450.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.91432e+00    1.39930e+01    5.79058e+00    8.82082e-01   -4.73680e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.63832e+03   -2.74321e+04    7.84260e+01   -2.27391e+04    3.68139e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90577e+04    2.99980e+02    5.76401e+02   -7.30588e+01    5.27369e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         230000      460.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.66894e+00    1.09209e+01   -2.75584e-01    6.23279e-01   -4.90303e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.45751e+03   -2.72917e+04    9.20958e+01   -2.27772e+04    3.56172e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92155e+04    2.90228e+02   -2.29527e+02   -6.47252e+02    1.30292e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         235000      470.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.10680e-01    1.07775e+01    2.33054e+00    8.14816e-01   -4.62951e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.48906e+03   -2.75121e+04    7.98017e+01   -2.29747e+04    3.68009e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92946e+04    2.99873e+02   -4.18420e+02    2.81640e+01    2.59628e-06
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+         240000      480.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.35230e+00    5.47230e+00    1.36530e+01    1.55600e+00   -4.84778e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.45547e+03   -2.72315e+04    7.78607e+01   -2.27196e+04    3.64370e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90759e+04    2.96908e+02    1.10389e+02    3.04169e+01    1.16140e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         245000      490.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.46143e+00    1.50793e+01    6.25215e+00    1.41700e+00   -4.84503e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.27825e+03   -2.68768e+04    8.58806e+01   -2.25369e+04    3.83880e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.86981e+04    3.12806e+02   -5.06913e+02    1.03980e+02    1.28162e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         250000      500.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.40282e-01    9.10434e+00    1.62385e+00    1.16699e+00   -4.76113e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.34200e+03   -2.71020e+04    8.48066e+01   -2.27106e+04    3.63722e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90734e+04    2.96380e+02   -3.92939e+02    8.04231e+01    1.05648e-06
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+         255000      510.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.18947e-02    1.94739e+01    5.28780e+00    3.52086e-01   -4.83301e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.40882e+03   -2.72511e+04    8.24370e+01   -2.27829e+04    3.65933e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91236e+04    2.98182e+02   -1.02668e+02   -8.91443e+01    8.07051e-07
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         260000      520.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.17274e-02    1.63357e+01    6.58942e+00    3.40236e+00   -4.83322e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.31444e+03   -2.67650e+04    7.38701e+01   -2.23987e+04    3.63762e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87610e+04    2.96413e+02   -2.17651e+02   -1.10892e+02    1.05058e-06
+
+Current vector of lambda components:[     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000 ]
+
+           Step           Time
+         265000      530.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.61001e-02    7.15426e+00   -4.50799e-01   -9.51605e-02   -5.01112e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.32947e+03   -2.70411e+04    8.29370e+01   -2.26721e+04    3.74591e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89262e+04    3.05237e+02   -6.30386e+02    3.61242e+01    1.65452e-05
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         270000      540.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.12616e+00    9.09055e+00    3.21532e-01    1.15322e-01   -4.50746e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.48327e+03   -2.68974e+04    7.31204e+01   -2.23734e+04    3.63539e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87380e+04    2.96231e+02    3.33570e+02    9.32372e+01    1.27536e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         275000      550.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.84056e-01    1.07223e+01    8.95553e+00    3.53119e+00   -5.02742e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.40436e+03   -2.71842e+04    8.61043e+01   -2.27203e+04    3.63851e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90818e+04    2.96485e+02   -1.19354e+02   -9.07009e+01    1.04747e-06
+
+Current vector of lambda components:[     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000 ]
+
+           Step           Time
+         280000      560.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.55783e-01    9.17834e+00    6.62871e-01    4.52232e-01   -4.63590e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.37747e+03   -2.72498e+04    6.61246e+01   -2.28417e+04    3.73682e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91049e+04    3.04496e+02   -6.49894e+02   -8.18151e+01    1.49567e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         285000      570.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.02976e+00    8.43942e+00   -1.48293e+00   -7.12500e-02   -4.82887e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.23942e+03   -2.68106e+04    8.26431e+01   -2.25259e+04    3.63215e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88938e+04    2.95967e+02   -7.01373e+02   -5.25893e+01    8.04847e-07
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         290000      580.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.44643e-01    9.36932e+00    2.73610e+00    8.02336e-02   -4.56417e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.62625e+03   -2.73427e+04    9.32869e+01   -2.26562e+04    3.48202e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91742e+04    2.83734e+02    7.50972e+02   -9.27650e+01    3.02039e-06
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+           Step           Time
+         295000      590.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.82826e-02    1.86241e+01   -4.18451e-03    3.46909e-01   -4.96319e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.46348e+03   -2.73175e+04    8.36971e+01   -2.28010e+04    3.63530e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91657e+04    2.96223e+02   -1.12692e+02   -5.87429e+01    3.12683e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         300000      600.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.63986e-02    1.51931e+01   -7.35024e-01    2.03864e-01   -5.02966e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.23298e+03   -2.70531e+04    8.39324e+01   -2.27718e+04    3.60500e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91668e+04    2.93754e+02   -7.21212e+02    1.41759e+02    1.34099e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         305000      610.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.05355e-01    8.76432e+00    3.21453e+00    7.67592e-01   -4.68241e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.52688e+03   -2.73909e+04    8.42783e+01   -2.28133e+04    3.59270e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92206e+04    2.92752e+02   -1.84472e+02    1.44641e+01    7.23078e-07
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         310000      620.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.01784e+01    8.07043e+00   -1.15855e+00    1.65461e+00   -5.20606e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.24407e+03   -2.68589e+04    8.24667e+01   -2.25657e+04    3.63981e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89258e+04    2.96591e+02   -4.10447e+01    2.01937e+01    1.66822e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         315000      630.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.07337e+00    2.70120e+01    1.96614e+00    1.04664e-01   -4.60545e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.44577e+03   -2.72686e+04    7.37352e+01   -2.27610e+04    3.55504e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92059e+04    2.89684e+02    3.04410e+02   -9.77460e+01    8.38005e-07
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+           Step           Time
+         320000      640.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.35335e+00    9.46083e+00   -5.28347e-01    1.09094e-01   -5.00669e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.20672e+03   -2.68079e+04    9.09280e+01   -2.25490e+04    3.75118e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87978e+04    3.05666e+02   -6.41047e+02    1.53790e+02    2.43262e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         325000      650.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.12889e-01    1.27673e+01    1.47872e+00    2.76216e-01   -4.62357e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.53818e+03   -2.73971e+04    7.64483e+01   -2.28140e+04    3.63386e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91802e+04    2.96106e+02    4.36523e+02   -4.84325e+00    8.86147e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         330000      660.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.06741e+00    8.51431e+00    2.20739e+00    6.95632e-01   -4.68431e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.50290e+03   -2.76346e+04    9.46999e+01   -2.30663e+04    3.69906e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.93673e+04    3.01419e+02   -2.59224e+02    3.81448e+01    1.67123e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         335000      670.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.68219e-01    1.62570e+01   -6.74880e-01    1.62406e-01   -5.02540e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.34809e+03   -2.71120e+04    8.58144e+01   -2.27121e+04    3.71820e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89939e+04    3.02979e+02   -4.06252e+02   -3.69584e+01    1.31626e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         340000      680.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13604e+00    6.70932e+00    1.49668e+00    1.02116e-01   -4.77914e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.49433e+03   -2.72693e+04    8.51120e+01   -2.27282e+04    3.62142e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91068e+04    2.95093e+02    9.00360e+01   -4.44577e+01    2.19339e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         345000      690.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    8.35193e+00    5.42656e+00    1.58378e+00    1.75741e-01   -4.63164e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.61571e+03   -2.74444e+04    9.05028e+01   -2.27690e+04    3.70550e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90635e+04    3.01944e+02    8.53037e+02   -7.53082e+01    1.00801e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         350000      700.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.27923e+00    8.92059e+00    1.76260e+00    6.72640e-01   -4.89724e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.44035e+03   -2.71856e+04    8.00856e+01   -2.27015e+04    3.70738e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89941e+04    3.02097e+02    2.47125e+01    8.15492e+01    2.51307e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         355000      710.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.91457e+00    1.19222e+01   -1.33828e+00    6.10055e-01   -4.97810e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.48012e+03   -2.74030e+04    9.20831e+01   -2.28645e+04    3.68127e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91832e+04    2.99970e+02   -1.75821e+02    3.61861e+01    8.21954e-07
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         360000      720.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.78683e+00    1.80688e+01   -4.44344e-01    7.73201e-01   -4.98741e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.60742e+03   -2.73765e+04    1.06896e+02   -2.26889e+04    3.76325e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89257e+04    3.06650e+02    8.31632e+02   -3.54632e+01    5.32565e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         365000      730.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.63775e+00    1.59909e+01   -9.04539e-01    2.10206e-01   -5.02185e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.40298e+03   -2.69919e+04    7.58210e+01   -2.25424e+04    3.68702e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88554e+04    3.00438e+02    5.74547e+01   -7.97230e+01    3.70940e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         370000      740.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.86866e-01    4.74216e+00    2.68938e-01    3.82429e-01   -4.64146e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.52647e+03   -2.72804e+04    7.88488e+01   -2.27156e+04    3.70407e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90115e+04    3.01827e+02    1.21651e+02    4.64290e+01    2.76236e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         375000      750.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.58152e+00    1.10308e+01    1.98383e+00    1.34546e+00   -4.76555e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.32182e+03   -2.69275e+04    7.48547e+01   -2.25616e+04    3.65882e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89028e+04    2.98140e+02   -1.57575e+02   -8.15971e+01    2.54805e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         380000      760.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.18712e+00    9.69262e+00    4.98746e+00    5.62182e-01   -4.50006e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.41198e+03   -2.72601e+04    9.46642e+01   -2.27780e+04    3.61768e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91603e+04    2.94788e+02   -4.09945e+02    5.22765e+01    3.77922e-06
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+         385000      770.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.46183e+00    1.48122e+01    5.44035e-01    1.19547e+00   -5.29025e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.45737e+03   -2.72231e+04    8.81856e+01   -2.27114e+04    3.91664e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87948e+04    3.19149e+02    4.03786e+01    4.44681e+01    1.28485e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         390000      780.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.15950e-01    1.35434e+01    2.02494e+00    5.57119e-02   -5.19306e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.54627e+03   -2.73565e+04    7.24860e+01   -2.27733e+04    3.74552e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90278e+04    3.05205e+02    9.49130e+01    1.06245e+02    1.41071e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         395000      790.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.89651e-01    1.61430e+01    8.32540e-01    7.23862e-01   -4.68479e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.30460e+03   -2.69827e+04    8.40407e+01   -2.26230e+04    3.55983e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90632e+04    2.90074e+02   -3.87186e+02    1.37748e+02    2.06003e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         400000      800.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.25173e+00    6.72308e+00    4.10068e+00   -1.40298e-01   -4.52150e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.42211e+03   -2.71076e+04    1.01594e+02   -2.26161e+04    3.68323e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89329e+04    3.00129e+02    2.62258e+02    1.25180e+02    1.28323e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         405000      810.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    8.31338e-01    3.94883e+00    2.62950e+00   -3.50504e-02   -4.77862e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.45517e+03   -2.74876e+04    7.85858e+01   -2.29943e+04    3.72962e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92647e+04    3.03909e+02   -2.29352e+02   -1.30086e+03    1.85398e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         410000      820.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.70927e+00    2.77214e+01    8.53871e+00    2.29305e+00   -4.82845e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.30282e+03   -2.69708e+04    9.48530e+01   -2.25761e+04    3.79456e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87815e+04    3.09201e+02    1.10135e+01    1.45244e+01    1.33923e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         415000      830.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    8.37783e-01    1.12819e+01    2.32938e+00    6.18534e-01   -4.67562e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.24333e+03   -2.70229e+04    1.05929e+02   -2.27053e+04    3.51568e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91896e+04    2.86477e+02   -5.78036e+02    1.54155e+02    7.68110e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         420000      840.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.75047e+00    1.27863e+01   -1.26633e+00    1.10424e+00   -5.21472e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.09967e+03   -2.67301e+04    1.00109e+02   -2.25661e+04    3.60002e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89661e+04    2.93349e+02   -1.28632e+03   -4.61278e+01    1.66556e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         425000      850.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    8.08871e+00    1.66799e+01   -1.50396e+00    1.11052e+00   -5.00368e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.59593e+03   -2.72176e+04    7.80989e+01   -2.25692e+04    3.39678e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91725e+04    2.76788e+02    4.36489e+02   -6.90431e+01    3.33848e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         430000      860.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.14570e+00    1.84958e+01   -7.03882e-01    1.18537e+00   -5.18178e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.26528e+03   -2.67453e+04    9.40873e+01   -2.24116e+04    3.82773e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.85839e+04    3.11904e+02   -5.18355e+02   -8.28099e+01    4.21138e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         435000      870.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.51861e-01    1.25209e+01    2.32092e+00   -8.15932e-02   -4.78111e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.38738e+03   -2.72465e+04    8.73135e+01   -2.28041e+04    3.67227e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91318e+04    2.99236e+02    1.01219e+02   -5.28205e+01    2.70299e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         440000      880.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.03419e-01    7.15060e+00    7.24962e-01    8.54132e-01   -4.66208e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.61118e+03   -2.74744e+04    7.54623e+01   -2.28251e+04    3.62114e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92040e+04    2.95070e+02    4.39910e+02    4.04389e+01    8.57907e-07
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         445000      890.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.34201e+00    8.57525e+00    1.15452e+00   -4.40172e-02   -4.48146e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.39734e+03   -2.73200e+04    7.12564e+01   -2.28832e+04    3.66599e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92172e+04    2.98725e+02   -1.30432e+02   -2.61891e+01    2.55722e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         450000      900.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.19502e+00    1.64591e+01   -6.20419e-01    2.00811e+00   -5.09380e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.21274e+03   -2.67926e+04    7.08696e+01   -2.25349e+04    3.83731e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.86976e+04    3.12684e+02   -2.83993e+02    5.45301e+00    1.59435e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         455000      910.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.43886e+00    1.57518e+01    3.15287e-01    4.15148e-01   -4.98753e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.56351e+03   -2.71355e+04    9.11967e+01   -2.25127e+04    3.49537e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90173e+04    2.84821e+02    6.83786e+02   -9.90756e+01    9.72122e-07
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         460000      920.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.55584e+00    8.56242e+00    4.61609e+00    4.55338e-01   -4.87256e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.67832e+03   -2.73888e+04    8.85499e+01   -2.26544e+04    3.71007e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89444e+04    3.02316e+02    7.14911e+02   -9.21260e+01    6.88763e-06
+
+Current vector of lambda components:[     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000 ]
+
+           Step           Time
+         465000      930.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10366e+00    1.60326e+01    7.41652e-01    8.18420e-01   -4.66026e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.54865e+03   -2.72339e+04    8.17566e+01   -2.26315e+04    3.56185e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90696e+04    2.90238e+02    1.19350e+02   -7.43858e+01    2.72242e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         470000      940.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.82323e+00    4.75522e+00    3.92387e+00    9.00633e-01   -4.78595e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.38519e+03   -2.72112e+04    8.21645e+01   -2.27793e+04    3.79542e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89839e+04    3.09271e+02    4.72418e+01   -3.96011e+01    1.91184e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         475000      950.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.94519e+00    7.22429e+00    1.88950e+00    9.93263e-01   -4.99249e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.39048e+03   -2.69837e+04    9.22408e+01   -2.25388e+04    3.71223e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88266e+04    3.02493e+02    2.88135e+01    3.35714e+01    4.78331e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         480000      960.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.95447e+00    7.70897e+00    5.72245e-01    1.69164e+00   -4.80230e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.59288e+03   -2.73711e+04    9.28782e+01   -2.27194e+04    3.67702e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90424e+04    2.99623e+02    3.78535e+02   -8.65617e+01    1.00152e-06
+
+Current vector of lambda components:[     0.0000     0.0000     0.0000     0.0000     0.0000     0.0000     0.0000 ]
+
+           Step           Time
+         485000      970.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.56324e+00    8.17318e+00    3.79786e+00    2.78165e-01   -4.69063e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.59808e+03   -2.73591e+04    7.82839e+01   -2.27158e+04    3.51299e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92028e+04    2.86257e+02    2.42252e+02   -1.94632e+00    2.78988e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         490000      980.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.48570e+00    1.36630e+01    9.17373e-01    1.27927e-01   -5.06710e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.43614e+03   -2.72567e+04    8.28044e+01   -2.27712e+04    3.84377e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89274e+04    3.13211e+02    1.50593e+01    1.02700e+02    2.77114e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         495000      990.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.66244e-01    1.13641e+01    2.20905e+00    2.58529e-01   -4.66276e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.51526e+03   -2.74323e+04    7.48670e+01   -2.28745e+04    3.54429e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.93302e+04    2.88808e+02   -2.79132e+01   -6.05886e+02    9.02638e-07
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         500000     1000.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.26104e-01    2.25026e+01    2.75823e-01    2.69369e-01   -4.98449e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.49251e+03   -2.71254e+04    8.96883e+01   -2.25691e+04    3.66645e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89027e+04    2.98762e+02    3.31603e+02    3.73827e+01    6.62703e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         505000     1010.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.89954e+00    2.09762e+01    1.11869e+00    1.85377e+00   -5.15258e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.54617e+03   -2.73527e+04    8.05836e+01   -2.27516e+04    3.69516e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90564e+04    3.01101e+02    3.60460e+02   -1.38625e+03    2.49261e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         510000     1020.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.81830e+00    1.41536e+01   -4.60630e-01   -5.16134e-03   -4.80495e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.56345e+03   -2.71354e+04    7.41230e+01   -2.25283e+04    3.81314e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87152e+04    3.10715e+02    6.66140e+02   -2.54589e+01    3.60908e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         515000     1030.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.41154e-01    1.06606e+01   -4.28426e-01    1.31674e-02   -4.94265e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.11979e+03   -2.66752e+04    7.15454e+01   -2.25223e+04    3.92425e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.85980e+04    3.19769e+02   -6.31032e+02   -5.06885e+01    1.72012e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         520000     1040.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.33085e+00    1.36481e+01    2.24337e+00    5.60262e-01   -4.56626e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    3.95470e+03   -2.66472e+04    9.40508e+01   -2.26263e+04    3.91241e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87139e+04    3.18804e+02   -1.66729e+03   -4.91563e+01    1.13510e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         525000     1050.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.07609e-01    1.17266e+01    8.87748e-01    8.60177e-02   -4.53862e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.58762e+03   -2.73961e+04    9.30383e+01   -2.27476e+04    3.84941e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88982e+04    3.13670e+02    4.33944e+02   -8.71388e+01    1.12908e-06
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+           Step           Time
+         530000     1060.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.01052e+00    7.32614e+00    3.48579e+00    2.51183e-01   -4.58542e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.12285e+03   -2.66413e+04    8.87748e+01   -2.24625e+04    3.66886e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87936e+04    2.98959e+02   -1.00403e+03    1.39888e+02    3.99099e-07
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         535000     1070.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.31396e-01    8.70253e+00    1.23745e+00    8.13423e-02   -4.54867e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.30657e+03   -2.68170e+04    8.62853e+01   -2.24595e+04    3.79874e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.86607e+04    3.09541e+02    1.31625e+02   -2.87238e+01    3.72620e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         540000     1080.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.01824e-01    8.92755e+00   -3.92818e-01    3.91403e-01   -5.11043e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    3.89222e+03   -2.64939e+04    8.88627e+01   -2.25543e+04    3.63760e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89167e+04    2.96411e+02   -1.60612e+03    1.13115e+02    1.79706e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         545000     1090.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.94907e+00    1.60304e+01   -1.16682e+00    5.55404e-01   -5.04078e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.29288e+03   -2.69687e+04    9.48422e+01   -2.26140e+04    3.75697e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88571e+04    3.06138e+02   -3.70394e+02    8.40185e+01    6.97226e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         550000     1100.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.67040e+00    5.81592e+00   -9.77056e-01    3.27590e-01   -5.09614e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.59321e+03   -2.72948e+04    8.37533e+01   -2.26619e+04    3.71058e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89514e+04    3.02358e+02    7.11069e+02    1.74056e+02    1.79062e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         555000     1110.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    8.42662e-01    1.73025e+01    3.08077e+00   -2.14958e-01   -4.54020e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.64000e+03   -2.75055e+04    9.92991e+01   -2.27906e+04    3.72999e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90606e+04    3.03939e+02    2.67161e+02   -5.34414e+01    2.87362e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         560000     1120.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.77470e+00    1.07295e+01    2.19236e+00   -1.54847e-01   -4.49293e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.62985e+03   -2.74248e+04    8.26759e+01   -2.27427e+04    3.69224e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90504e+04    3.00863e+02    9.47013e+02    2.49989e+01    1.42013e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         565000     1130.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.97856e+00    1.60763e+01    4.73402e-01   -7.76243e-02   -4.93377e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.37111e+03   -2.71481e+04    8.80983e+01   -2.27188e+04    3.70309e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90157e+04    3.01747e+02   -2.37812e+02   -6.85409e+02    7.69108e-07
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         570000     1140.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.63357e+00    1.04925e+01    7.82883e-01    5.70934e-01   -4.67853e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.21994e+03   -2.71000e+04    9.39435e+01   -2.28174e+04    3.55355e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92638e+04    2.89562e+02   -8.26200e+02    5.08983e+00    1.64265e-06
+
+Current vector of lambda components:[     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000     0.8000 ]
+
+           Step           Time
+         575000     1150.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    8.99213e-02    2.36508e+01    5.60710e+00    1.32259e+00   -4.77945e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.34142e+03   -2.71416e+04    8.96323e+01   -2.27277e+04    3.71299e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.90147e+04    3.02554e+02    3.18703e+01   -1.96225e+01    2.64173e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         580000     1160.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.22054e+00    1.51219e+01    2.12739e+00    4.76939e-01   -4.67620e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.35081e+03   -2.72374e+04    8.30579e+01   -2.28314e+04    3.93040e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89010e+04    3.20270e+02   -6.01071e+02   -4.56224e+01    1.64066e-06
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+         585000     1170.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.21734e+00    7.82351e+00    3.36206e+00    4.32300e-01   -4.86800e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.61805e+03   -2.74371e+04    8.09581e+01   -2.27709e+04    3.63060e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91403e+04    2.95841e+02    5.47267e+02    6.77899e+01    3.51187e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         590000     1180.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.47003e+00    1.42394e+01    1.04836e+00    3.45080e+00   -4.85469e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.63334e+03   -2.72273e+04    7.39564e+01   -2.25473e+04    3.77176e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87756e+04    3.07343e+02    8.56358e+02    1.38472e+01    3.30174e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         595000     1190.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.44095e-01    8.25921e+00   -1.08830e+00    2.38027e-01   -4.95804e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.43951e+03   -2.72695e+04    7.77158e+01   -2.27941e+04    3.61259e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91815e+04    2.94373e+02    1.70950e+01   -1.75490e+03    5.90547e-06
+
+Current vector of lambda components:[     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000     1.0000 ]
+
+           Step           Time
+         600000     1200.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.64518e+00    1.68943e+01    7.48351e+00    2.95756e+00   -4.98092e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.33262e+03   -2.67976e+04    1.01005e+02   -2.23828e+04    3.74666e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.86361e+04    3.05298e+02    8.40174e+01    1.42233e+01    5.83233e-06
+
+Current vector of lambda components:[     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000     0.5000 ]
+
+           Step           Time
+         605000     1210.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.50461e+01    1.95115e+01   -1.68065e-01    5.56641e-01   -5.11224e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.59753e+03   -2.73519e+04    8.21500e+01   -2.26884e+04    3.71179e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89766e+04    3.02457e+02    9.27969e+02    4.60212e+01    1.97986e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         610000     1220.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.31692e+00    3.07674e+00    1.03867e+00    3.31165e-01   -4.63350e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.20836e+03   -2.66392e+04    7.80755e+01   -2.23904e+04    3.63986e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87505e+04    2.96595e+02   -3.94666e+02    1.94801e+01    4.72245e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         615000     1230.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    7.26214e-01    2.17536e+01    5.20450e+00   -1.74700e-01   -5.05275e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.13236e+03   -2.70233e+04    6.80018e+01   -2.28459e+04    3.70021e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91457e+04    3.01513e+02   -1.46646e+03    4.47806e+01    1.95533e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         620000     1240.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.15979e+00    1.00317e+01    3.15277e+00    1.47933e+00   -4.63186e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.11437e+03   -2.67653e+04    8.24322e+01   -2.25910e+04    3.76352e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88275e+04    3.06671e+02   -1.02146e+03   -1.67905e+01    4.28435e-07
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         625000     1250.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.91567e+00    1.90095e+01    5.06823e+00   -4.16765e-03   -4.73140e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.52531e+03   -2.73202e+04    7.73562e+01   -2.27348e+04    3.77008e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89648e+04    3.07206e+02    4.54187e+02    1.35675e+02    2.85771e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         630000     1260.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    6.31944e+00    1.67353e+01    5.44501e+00    1.10025e+00   -4.82277e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.31049e+03   -2.67163e+04    8.94247e+01   -2.23350e+04    3.59154e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.87434e+04    2.92658e+02    3.44438e+02   -7.04889e+01    1.67566e-06
+
+Current vector of lambda components:[     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000     0.3000 ]
+
+           Step           Time
+         635000     1270.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05793e+00    1.89360e+01    2.94512e+00    1.30151e+00   -4.82353e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.24085e+03   -2.68280e+04    8.79787e+01   -2.25231e+04    3.83923e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.86839e+04    3.12841e+02   -1.46592e+02   -3.49783e+01    1.45940e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         640000     1280.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.29834e+00    1.41550e+01   -1.20206e+00    1.06580e-02   -4.92836e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.22418e+03   -2.66484e+04    8.37917e+01   -2.23724e+04    3.80319e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.85692e+04    3.09904e+02   -1.61718e+02   -5.94981e+01    2.50044e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         645000     1290.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    3.08197e+00    4.13988e+00    2.00727e+00    4.97143e-01   -4.62329e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.31752e+03   -2.69142e+04    7.80046e+01   -2.25552e+04    3.62693e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89282e+04    2.95541e+02    4.38960e+01   -9.58809e+01    9.96188e-07
+
+Current vector of lambda components:[     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000 ]
+
+           Step           Time
+         650000     1300.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18994e+00    8.55156e+00    8.74504e-01    2.13186e-01   -4.84310e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.54284e+03   -2.72818e+04    8.40295e+01   -2.26925e+04    3.57395e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91186e+04    2.91224e+02    3.07053e+02   -3.56766e+01    1.02027e-06
+
+Current vector of lambda components:[     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000     0.4000 ]
+
+           Step           Time
+         655000     1310.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.39740e-01    1.50048e+01   -1.25650e+00   -1.04480e-01   -5.01307e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.20623e+03   -2.68550e+04    8.12108e+01   -2.26036e+04    3.66769e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89359e+04    2.98863e+02   -1.01479e+03    1.59650e+02    6.32203e-07
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+           Step           Time
+         660000     1320.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.49006e+00    6.14655e+00    3.40955e+00    8.70553e-01   -5.34391e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.24574e+03   -2.69382e+04    8.71802e+01   -2.26458e+04    3.72820e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89176e+04    3.03794e+02   -6.94064e+02   -1.01408e+02    1.58710e-06
+
+Current vector of lambda components:[     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000     0.2000 ]
+
+           Step           Time
+         665000     1330.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    5.53965e+00    1.18806e+01    1.14318e-01    4.11240e-01   -5.13939e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.56324e+03   -2.72974e+04    1.05902e+02   -2.26617e+04    3.66597e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89958e+04    2.98723e+02    8.98612e+02   -9.85714e+01    1.58224e-06
+
+Current vector of lambda components:[     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000 ]
+
+           Step           Time
+         670000     1340.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11498e+00    9.55027e+00    1.07047e+01    8.59278e-01   -5.14967e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.40483e+03   -2.73271e+04    8.88829e+01   -2.28627e+04    3.59228e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.92704e+04    2.92718e+02   -3.90462e+02   -8.73387e+01    1.20837e-06
+
+Current vector of lambda components:[     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000     0.1000 ]
+
+           Step           Time
+         675000     1350.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.61167e+00    7.58162e+00   -1.42917e+00    9.58870e-01   -5.07384e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.41775e+03   -2.71366e+04    8.20543e+01   -2.26788e+04    3.86507e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88137e+04    3.14946e+02   -5.33238e+01    6.36912e+01    2.54247e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         680000     1360.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    8.21066e-01    7.82481e+00    1.37446e+00    4.36498e-01   -4.65476e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.39821e+03   -2.68442e+04    7.22172e+01   -2.24099e+04    3.59070e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88192e+04    2.92590e+02    3.02992e+02    3.61757e+01    4.26454e-06
+
+Current vector of lambda components:[     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500     0.9500 ]
+
+           Step           Time
+         685000     1370.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.54396e-01    1.51690e+01   -7.84219e-01    7.97702e-02   -4.89778e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.50711e+03   -2.75109e+04    8.92186e+01   -2.29486e+04    3.58081e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.93678e+04    2.91783e+02   -1.40076e+02    6.57435e+01    4.69233e-06
+
+Current vector of lambda components:[     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500     0.8500 ]
+
+           Step           Time
+         690000     1380.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.80012e-01    3.54842e+00    3.10273e-01    1.35680e-01   -4.54083e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.09012e+03   -2.68570e+04    8.13502e+01   -2.27264e+04    3.77385e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89526e+04    3.07514e+02   -1.32973e+03    1.15780e+01    1.26558e-06
+
+Current vector of lambda components:[     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000     0.9000 ]
+
+           Step           Time
+         695000     1390.00000
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    4.16854e+00    9.98058e+00    1.90108e+00    7.50321e-01   -4.98960e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.68216e+03   -2.74901e+04    8.03581e+01   -2.27607e+04    3.59808e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.91626e+04    2.93190e+02    5.19131e+02    2.24530e+02    5.16627e-06
+
+Current vector of lambda components:[     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000     0.7000 ]
+
+           Step           Time
+         700000     1400.00000
+
+Writing checkpoint, step 700000 at Wed Nov  1 13:27:39 2023
+
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.20121e+00    1.20675e+01   -5.11134e-01    1.41153e+00   -5.27557e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.55895e+03   -2.72073e+04    8.37119e+01   -2.26033e+04    3.78758e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.88157e+04    3.08632e+02    3.82993e+02    6.06208e+01    3.89891e-06
+
+Current vector of lambda components:[     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000     0.6000 ]
+
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 700001 steps using 14001 frames
+
+   Energies (kJ/mol)
+           Bond          Angle Ryckaert-Bell.          LJ-14     Coulomb-14
+    2.47158e+00    1.33192e+01    2.27711e+00    6.05280e-01   -4.78667e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential    Kinetic En.
+    4.42055e+03   -2.71623e+04    8.40231e+01   -2.26869e+04    3.69241e+03
+   Total Energy    Temperature Pressure (bar)    dVremain/dl   Constr. rmsd
+   -1.89945e+04    3.00877e+02   -3.04927e+01   -8.98932e+01    0.00000e+00
+
+          Box-X          Box-Y          Box-Z
+    2.75669e+00    2.75669e+00    1.94928e+00
+
+   Total Virial (kJ/mol)
+    1.24450e+03   -2.96208e+00   -1.66132e+00
+   -2.96263e+00    1.24648e+03    3.44715e+00
+   -1.66421e+00    3.44422e+00    1.24577e+03
+
+   Pressure (bar)
+   -2.85814e+01    7.92590e+00    1.82136e+00
+    7.92714e+00   -3.22569e+01   -8.26019e+00
+    1.82780e+00   -8.25369e+00   -3.06397e+01
+
+
+       P P   -   P M E   L O A D   B A L A N C I N G
+
+ PP/PME load balancing changed the cut-off and PME settings:
+           particle-particle                    PME
+            rcoulomb  rlist            grid      spacing   1/beta
+   initial  1.100 nm  1.101 nm      24  24  24   0.115 nm  0.352 nm
+   final    1.100 nm  1.101 nm      24  24  24   0.115 nm  0.352 nm
+ cost-ratio           1.00             1.00
+ (note that these numbers concern only part of the total PP and PME load)
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ NB Free energy kernel              1257066.672120     1257066.672     1.5
+ Pair Search distance check            1149.674688       10347.072     0.0
+ NxN Ewald Elec. + LJ [F]           1189998.859392    78539924.720    94.9
+ NxN Ewald Elec. + LJ [V&F]           24287.432512     2598755.279     3.1
+ 1,4 nonbonded interactions               4.900007         441.001     0.0
+ Shift-X                                 10.333476          62.001     0.0
+ Bonds                                    1.400002          82.600     0.0
+ Angles                                   9.100013        1528.802     0.0
+ RB-Dihedrals                             8.400012        2074.803     0.0
+ Virial                                 106.471521        1916.487     0.0
+ Update                                1033.201476       32029.246     0.0
+ Stop-CM                                 10.334952         103.350     0.0
+ P-Coupling                             103.321476         619.929     0.0
+ Calc-Ekin                              206.642952        5579.360     0.0
+ Lincs                                    8.400024         504.001     0.0
+ Lincs-Mat                               67.200192         268.801     0.0
+ Constraint-V                          2070.604437       18635.440     0.0
+ Constraint-Vir                         103.111473        2474.675     0.0
+ Settle                                 684.601956      253302.724     0.3
+-----------------------------------------------------------------------------
+ Total                                                82725716.962   100.0
+-----------------------------------------------------------------------------
+
+
+     R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank, each using 8 OpenMP threads
+
+ Computing:          Num   Num      Call    Wall time         Giga-Cycles
+                     Ranks Threads  Count      (s)         total sum    %
+-----------------------------------------------------------------------------
+ Neighbor search        1    8       7001       5.057        117.481   2.0
+ Launch GPU ops.        1    8     700001      62.634       1455.106  24.9
+ Force                  1    8     700001     156.837       3643.645  62.3
+ Wait PME GPU gather    1    8     700001       1.400         32.519   0.6
+ Reduce GPU PME F       1    8     700001       1.255         29.156   0.5
+ Wait GPU NB local                              0.238          5.535   0.1
+ NB X/F buffer ops.     1    8    1393001       2.836         65.884   1.1
+ AWH                    1    8     700001       0.567         13.174   0.2
+ Write traj.            1    8          1       0.021          0.483   0.0
+ Update                 1    8    1400002       9.255        215.020   3.7
+ Constraints            1    8    1400004       6.938        161.184   2.8
+ Rest                                           4.845        112.558   1.9
+-----------------------------------------------------------------------------
+ Total                                        251.882       5851.747 100.0
+-----------------------------------------------------------------------------
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     2015.058      251.882      800.0
+                 (ns/day)    (hour/ns)
+Performance:      480.225        0.050
+Finished mdrun on rank 0 Wed Nov  1 13:27:39 2023
+
