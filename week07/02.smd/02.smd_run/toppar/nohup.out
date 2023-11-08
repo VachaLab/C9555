@@ -1,0 +1,28 @@
+
+** (gedit:17763): WARNING **: 08:58:18.967: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17763): WARNING **: 08:58:27.123: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17763): WARNING **: 08:59:18.667: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17763): WARNING **: 08:59:37.521: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17763): WARNING **: 08:59:59.725: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:03:23.900: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:04:27.509: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:04:28.478: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:05:05.242: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:06:20.523: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:06:47.754: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:09:52.150: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+** (gedit:17908): WARNING **: 09:11:31.210: Set document metadata failed: Setting attribute gedit-bookmarks not supported
+
+(gedit:17908): Gtk-CRITICAL **: 09:11:43.686: gtk_window_set_transient_for: assertion 'GTK_IS_WINDOW (window)' failed
