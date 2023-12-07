@@ -61,4 +61,6 @@ export OMP_NUM_THREADS=$NOMP
 
 # Run the simulation with the specified number of MPI processes and OpenMP threads
 mpirun -np $MPI gmx_mpi mdrun -ntomp $NOMP -gpu_id $GPU_ID -nb $NB_CALC_MODE -pme $PME_CALC_MODE -bonded $BONDED_CALC_MODE -nsteps 200000 -x dppc-md.xtc -c dppc-md.gro -s dppc-md.tpr
-gmx trjconv -s dppc-md.tpr -f dppc-md.xtc -o dppc-md.pdb -pbc whole -conect 
+
+# Use this line to get a PDB file of the trajectory which you can view in VMD
+# gmx trjconv -s dppc-md.tpr -f dppc-md.xtc -o dppc-md.pdb -pbc whole -conect 
