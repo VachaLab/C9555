@@ -1,4 +1,0 @@
-source leaprc.gaff
-loadamberprep hpo4.prepc
-saveamberparm MOL hpo4.prmtop hpo4.inpcrd
-quit
