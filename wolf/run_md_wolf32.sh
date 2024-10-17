@@ -11,7 +11,7 @@ simname=$1
 cat > $filename << EOL
 #!/bin/bash
 module add gromacs:2022.3-plumed
-gmx mdrun -deffnm $simname -v -cpi $simname.cpt
+gmx mdrun -nb gpu -pme gpu -bonded gpu -deffnm $simname -cpi $simname.cpt -maxh 23
 exit
 EOL
 

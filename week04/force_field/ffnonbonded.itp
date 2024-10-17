@@ -1,0 +1,9 @@
+[ atomtypes ]
+; full atom descriptions are available in ffoplsaa.atp
+; name  bond_type    mass    charge   ptype          sigma      epsilon
+
+; four-site tip4p/2005 water model
+
+ MW_tip4p   MW    0		 0.00000    -1.1128     D    0.00000e+00  0.00000000
+ OW_tip4p   OW    8		15.99940     0.0000     A    3.15890e-01  0.77490765
+ HW_tip4p   HW    1		 1.00794     0.5564     A    0.00000e+00  0.00000000
