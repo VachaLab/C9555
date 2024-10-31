@@ -1,0 +1,62 @@
+; Preprocessing
+define 					= <POS_RES>
+; Run control
+integrator				= md
+tinit					= 0.0
+dt					= 0.001
+nsteps					= 200000
+comm-mode				= Linear
+nstcomm					= 100
+comm-grps				= System
+; Output control
+nstlog					= 5000
+nstenergy				= 1000
+nstxout-compressed			= 5000
+compressed-x-precision			= 100
+energygrps				=
+; Neighbor searching
+cutoff-scheme				= Verlet
+nstlist					= 20
+pbc					= xyz
+periodic-molecules			= no
+verlet-buffer-tolerance			= 0.005
+; Electrostatics
+coulombtype				= PME
+coulomb-modifier			= None
+rcoulomb				= 1.2
+epsilon-r				= 1.0
+epsilon-rf				= 0.0
+; Ewald
+fourierspacing				= 0.12
+pme-order				= 4
+; Van der Waals
+vdwtype					= Cut-off
+vdw-modifier				= Force-Switch
+rvdw					= 1.2
+rvdw-switch				= 1.0
+DispCorr				= no
+; Temperature coupling
+tcoupl					= Berendsen
+tc-grps					= System
+nsttcouple				= -1
+tau-t					= 1.0
+ref-t					= 310
+; Pressure coupling
+pcoupl					= Berendsen
+pcoupltype				= isotropic
+nstpcouple				= -1
+tau-p					= 5.0
+compressibility				= 4.5e-5
+ref-p					= 1.0
+refcoord-scaling			= all
+; Velocity generation
+gen-vel					= yes
+gen-temp				= 310
+gen-seed				= -1
+; Bonds
+constraints				= h-bonds
+constraint-algorithm			= LINCS
+continuation				= no
+lincs-order				= 4
+lincs-iter				= 1
+
