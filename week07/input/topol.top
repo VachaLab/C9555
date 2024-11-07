@@ -1,0 +1,14 @@
+; force field parameters
+#include "charmm36-jul2022.ff/forcefield.itp"
+#include "charmm36-jul2022.ff/tip3p.itp"
+#include "charmm36-jul2022.ff/ions.itp"
+
+[ system ]
+; name of the system
+NaCl ion pair in water
+
+[ molecules ]
+; compound   #mols
+NA           1
+CL           1
+SOL          4055

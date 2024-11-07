@@ -1,0 +1,75 @@
+; Run control
+integrator				= md
+tinit					= 0.0
+dt					= 0.002
+nsteps					= 1000000
+comm-mode				= Linear
+nstcomm					= 100
+comm-grps				= System
+; Output control
+nstlog					= 5000
+nstenergy				= 1000
+nstxout-compressed			= 5000
+compressed-x-precision			= 100
+energygrps				=
+; Neighbor searching
+cutoff-scheme				= Verlet
+nstlist					= 20
+pbc					= xyz
+periodic-molecules			= no
+verlet-buffer-tolerance			= 0.005
+; Electrostatics
+coulombtype				= PME
+coulomb-modifier			= None
+rcoulomb				= 1.2
+epsilon-r				= 1.0
+epsilon-rf				= 0.0
+; Ewald
+fourierspacing				= 0.12
+pme-order				= 4
+; Van der Waals
+vdwtype					= Cut-off
+vdw-modifier				= Force-Switch
+rvdw					= 1.2
+rvdw-switch				= 1.0
+DispCorr				= no
+; Temperature coupling
+tcoupl					= Nose-Hoover
+tc-grps					= System
+nsttcouple				= -1
+tau-t					= 1.0
+ref-t					= 310
+; Pressure coupling
+pcoupl					= Parrinello-rahman
+pcoupltype				= isotropic
+nstpcouple				= 10
+tau-p					= 5.0
+compressibility				= 4.5e-5
+ref-p					= 1.0
+refcoord-scaling			= all
+; Velocity generation
+gen-vel					= no
+; Bonds
+constraints				= h-bonds
+constraint-algorithm			= LINCS
+continuation				= yes
+lincs-order				= 4
+lincs-iter				= 1
+; COM pulling
+pull					= yes
+pull-nstxout				= 5000
+pull-nstfout				= 5000
+pull-ngroups				= 2
+pull-group1-name			= NA
+pull-group2-name			= CL
+pull-ncoords				= 1
+pull-coord1-type			= umbrella
+pull-coord1-geometry			= distance
+pull-coord1-groups			= 1 2
+pull-coord1-dim				= Y Y Y
+pull-coord1-init			= 2.0
+pull-coord1-rate			= -0.00085
+pull-coord1-k				= 1000
+pull-pbc-ref-prev-step-com		= yes
+pull-group1-pbcatom			= 1
+pull-group2-pbcatom			= 2
