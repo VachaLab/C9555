@@ -1,0 +1,17 @@
+# calculate the box center
+c: CENTER ATOMS=1-3200 NOPBC
+
+# calculate the scaled distances between the box center and the first bead
+d: DISTANCE ATOMS=c,1 SCALED_COMPONENTS
+
+# calculate a normalized histogram
+hist: HISTOGRAM ARG=d.c GRID_MIN=-0.5 GRID_MAX=0.5 GRID_BIN=100 BANDWIDTH=0.05 NORMALIZATION=ndata
+# write the histogram to a file
+DUMPGRID GRID=hist FILE=HIST_PLMD
+
+# calculate a discrete histogram
+# hist: HISTOGRAM ARG=d.c GRID_MIN=-0.5 GRID_MAX=0.5 GRID_BIN=100 KERNEL=DISCRETE NORMALIZATION=false
+# DUMPGRID GRID=hist FILE=HIST_PLMD
+
+# write the output to a file
+PRINT ARG=d.c FILE=COLS

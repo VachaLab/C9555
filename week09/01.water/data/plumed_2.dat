@@ -1,0 +1,22 @@
+# calculate the box center
+c: CENTER ATOMS=1-3200 NOPBC
+
+# calculate the scaled distances between the box center and the first bead
+d: DISTANCE ATOMS=c,1 SCALED_COMPONENTS
+
+# get the simulation time / snapshot number
+time: TIME
+
+# calculate a histogram for the first half of the trajectory
+UPDATE_IF ARG=time LESS_THAN=500
+    hist1: HISTOGRAM ARG=d.c GRID_MIN=-0.5 GRID_MAX=0.5 GRID_BIN=100 BANDWIDTH=0.05 NORMALIZATION=ndata
+UPDATE_IF ARG=time END
+
+# calculate a histogram for the second half of the trajectory
+UPDATE_IF ARG=time MORE_THAN=500
+    hist2: HISTOGRAM ARG=d.c GRID_MIN=-0.5 GRID_MAX=0.5 GRID_BIN=100 BANDWIDTH=0.05 NORMALIZATION=ndata
+UPDATE_IF ARG=time END
+
+# write the histograms to files
+DUMPGRID GRID=hist1 FILE=HIST_PLMD_H1
+DUMPGRID GRID=hist2 FILE=HIST_PLMD_H2
