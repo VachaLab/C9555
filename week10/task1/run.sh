@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/bin/bash
 
 module add gromacs:2022.3-plumed
 

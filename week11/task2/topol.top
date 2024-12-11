@@ -1,0 +1,18 @@
+; Include forcefield parameters
+#include "martini_v22.ff/martini_v2.2.itp"
+
+; Include protein topology
+#include "martini_v22.ff/Protein.itp"
+
+; Include lipid topology
+#include "martini_v22.ff/martini_v2.0_lipids_all_201506.itp"
+
+; Include topology for ions
+#include "martini_v22.ff/martini_v2.0_ions.itp"
+
+[ system ]
+Martini system in water
+
+[ molecules ]
+Protein 1
+W 7860
