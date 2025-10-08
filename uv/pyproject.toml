@@ -1,0 +1,16 @@
+[project]
+name = "c9555"
+version = "1.0.0"
+description = "uv environment for C9555 course"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipython>=9.6.0",
+    "ipywidgets>=8.1.7",
+    "jupyterlab>=4.4.9",
+    "jupyterlab-widgets>=3.0.15",
+    "matplotlib>=3.10.6",
+    "mdanalysis>=2.9.0",
+    "pandas>=2.3.3",
+    "scipy>=1.16.2",
+]
