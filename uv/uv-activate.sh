@@ -4,6 +4,7 @@
 curl -LsSf https://astral.sh/uv/install.sh | sh -x
 
 # initialize uv environment
+export PATH=$PATH:/storage/wolf/home/$USER/.local/bin
 uv init .
 uv venv --python 3.13.7
 source .venv/bin/activate
