@@ -2,7 +2,7 @@
 
 Wanna start? It is the first week? Copy these files first to your local machine.
 
-<code>git clone --depth 1 https://gitlab.com/denysbiriukov/survival_guide_simulations_c9555.git</code>
+<code>git clone --depth 1 https://github.com/VachaLab/C9555.git</code>
 
 ### Instruction for MUNI students
 
