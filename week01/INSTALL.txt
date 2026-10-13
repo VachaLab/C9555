@@ -1,0 +1,40 @@
+Please, follow the next steps
+
+0. Add module anaconda3
+module add anaconda3
+
+You'll have to close and open a new session on the linux terminal.
+Read the output and follow the instructions.
+
+1. Create a conda environment
+conda create -n molsim_autum python=3.11 -y
+
+2. Activate the environment
+conda activate molsim_autum
+
+3. Install mamba
+conda install -c conda-forge mamba -y
+
+4. Install libraries 
+mamba install -c conda-forge openmm openmmforcefields rdkit numpy matplotlib jupyterlab ipykernel -y
+
+pip install py3Dmol
+pip install ipywidgets
+
+5. Register kernel for jupyter
+python -m ipykernel install --user --name molsim_autum --display-name "Python (molsim_autum)"
+
+6. Verify
+python -c "
+import openmm, openmmforcefields, rdkit, py3Dmol, numpy, matplotlib
+import os
+gaff_path = os.path.join(os.path.dirname(openmmforcefields.__file__), 'ffxml', 'amber', 'gaff', 'ffxml', 'gaff-2.11.xml')
+print('OpenMM:', openmm.version.version)
+print('GAFF xml found:', os.path.exists(gaff_path))
+print('Platforms:', [openmm.Platform.getPlatform(i).getName() for i in range(openmm.Platform.getNumPlatforms())])
+"
+
+7. Start Jupyter
+jupyter lab
+
+8. Open the notebooks in jupyter.
