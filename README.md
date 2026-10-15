@@ -2,7 +2,7 @@
 
 Wanna start? It is the first week? Copy these files first to your local machine.
 
-<code>git clone --depth 1 https://github.com/VachaLab/C9555.git</code>
+<code>git clone --depth 1 https://github.com/VachaLab/C9555.git C9555_git</code>
 
 ### Instruction for MUNI students
 
@@ -10,11 +10,11 @@ Before any practical lesson, be sure that the working environment is ready and f
 
 First, enter the folder of the course:
 
-<code>cd survival_guide_simulations_c9555/</code>
+<code>cd C9555_git//</code>
 
 Then, enter the folder of the corresponding practical, for instance:
 
-<code>cd week01/</code>
+<code>cd weekXX/</code>
 
 Adjust the infinity environment for the needs of the course:
 
