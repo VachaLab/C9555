@@ -10,7 +10,7 @@ Before any practical lesson, be sure that the working environment is ready and f
 
 First, enter the folder of the course:
 
-<code>cd C9555_git//</code>
+<code>cd C9555_git/</code>
 
 Then, enter the folder of the corresponding practical, for instance:
 
