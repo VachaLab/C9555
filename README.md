@@ -1,4 +1,4 @@
-# A Survival Guide to Simulations
+# A Practical Guide to Simulations
 
 Wanna start? It is the first week? Copy these files first to your local machine.
 
@@ -12,7 +12,7 @@ First, enter the folder of the course:
 
 <code>cd C9555_git/</code>
 
-Then, enter the folder of the corresponding practical, for instance:
+Then, enter the folder of the corresponding practical:
 
 <code>cd weekXX/</code>
 
